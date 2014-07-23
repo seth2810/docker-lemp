@@ -3,4 +3,4 @@
 	url = https://github.com/fideloper/docker-nginx-php.git
 [submodule "docker-mysql"]
 	path = docker-mysql
-	url = https://github.com/fideloper/docker-mysql.git
+	url = https://github.com/seth2810/docker-mysql
