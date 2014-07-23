@@ -1,5 +1,4 @@
-clndr
-=====
+docker-lemp
+====
 
-A simple calendar webapp based on yii.
-Includes docker environment.
+A simple docker LEMP server based on containers.
