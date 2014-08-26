@@ -8,7 +8,7 @@ stop:
 
 compile:
 	docker build -t mysql $(CUR_DIR)/docker-mysql
-	docker build -t webapp $(CUR_DIR)/docker-nginx-php
+	docker build -t webapp $(CUR_DIR)/docker-apache-php
 
 clean:
 	docker rm mysql
@@ -16,6 +16,6 @@ clean:
 
 run:
 	@( docker run -p 3306:3306 --name mysql -d mysql /sbin/my_init --enable-insecure-key )
-	@( docker run -v $(CUR_DIR)/www:/var/www:rw -p 80:80 --name webapp --link mysql:db -d webapp /sbin/my_init --enable-insecure-key )
+	@( docker run -v $(ROOT):/var/www/html:rw -p 80:80 --name webapp --link mysql:db -d webapp /sbin/my_init --enable-insecure-key )
 
 .PHONY: all compile stop run

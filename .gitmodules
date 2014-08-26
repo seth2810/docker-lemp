@@ -1,6 +1,6 @@
-[submodule "docker-nginx-php"]
-	path = docker-nginx-php
-	url = https://github.com/fideloper/docker-nginx-php.git
 [submodule "docker-mysql"]
 	path = docker-mysql
 	url = https://github.com/seth2810/docker-mysql
+[submodule "docker-apache-php"]
+	path = docker-apache-php
+	url = https://github.com/seth2810/docker-apache-php
