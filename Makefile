@@ -1,16 +1,18 @@
 CUR_DIR = $(shell pwd)
 
-all: compile run
+all: stop clean compile run
 
 stop:
 	docker stop mysql
-	docker rm mysql
 	docker stop webapp
-	docker rm webapp
 
 compile:
 	docker build -t mysql $(CUR_DIR)/docker-mysql
 	docker build -t webapp $(CUR_DIR)/docker-nginx-php
+
+clean:
+	docker rm mysql
+	docker rm webapp
 
 run:
 	@( docker run -p 3306:3306 --name mysql -d mysql /sbin/my_init --enable-insecure-key )
